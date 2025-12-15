@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  role      String   @default("SENDER") // SENDER, STAFF, DRIVER
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  parcels   Parcel[]
+}
+
+model Parcel {
+  id           String    @id @default(uuid())
+  pincode      String
+  weight       Float
+  senderId     String
+  sender       User      @relation(fields: [senderId], references: [id])
+  status       String    @default("PENDING") // PENDING, SCHEDULED, OUT_FOR_DELIVERY, DIVLERED, FAILED
+  chosenSlotId String?
+  chosenSlot   Slot?     @relation(fields: [chosenSlotId], references: [id])
+  routeId      String?
+  route        Route?    @relation(fields: [routeId], references: [id])
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  deliveryDate DateTime?
+}
+
+model Slot {
+  id        String   @id
+  startTime DateTime
+  endTime   DateTime
+  capacity  Int
+  booked    Int      @default(0)
+  parcels   Parcel[]
+}
+
+model Route {
+  id           String   @id @default(uuid())
+  driverId     String
+  date         DateTime
+  routeDetails String // Store the sequence of stops and ETAs as JSON string
+  parcels      Parcel[]
+  createdAt    DateTime @default(now())
+}
+
+// Enums removed for SQLite compatibility
+
