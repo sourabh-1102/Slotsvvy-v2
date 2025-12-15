@@ -3,12 +3,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/api"
+      "destination": "/dist/server.js"
     }
-  ],
-  "functions": {
-    "api/**/*.ts": {
-      "memory": 1024
-    }
-  }
+  ]
 }
