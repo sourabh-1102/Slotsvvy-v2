@@ -1,16 +1,36 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { signIn } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
 import { api } from '../../lib/api';
 
 export default function LoginPage() {
   const router = useRouter();
+  const { data: session, status } = useSession();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
+  // Redirect authenticated users
+  useEffect(() => {
+    if (status === 'authenticated') {
+      router.replace('/sender'); 
+    }
+  }, [status, router]);
+
+  // Prevent flash of content while checking session
+  if (status === 'loading') {
+    return <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+    </div>;
+  }
+
+  // If authenticated, don't show form (though useEffect will redirect)
+  if (status === 'authenticated') {
+    return null; 
+  }
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +41,7 @@ export default function LoginPage() {
       const data = await api.auth.login({ email, password });
       
       if (data.success) {
-        router.push('/staff');
+        router.replace('/sender');
         router.refresh(); 
       } else {
         setError(data.error || 'Login failed');
@@ -120,7 +140,9 @@ export default function LoginPage() {
 
           <div className="mt-6">
             <button
-              onClick={() => signIn('google', { callbackUrl: '/staff' })}
+              onClick={() => signIn('google', {
+                callbackUrl: `${window.location.origin}/sender`,
+              })}
               className="flex w-full items-center justify-center gap-3 rounded-md bg-white px-3 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:ring-transparent"
             >
               <svg className="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24">
