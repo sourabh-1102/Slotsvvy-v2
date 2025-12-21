@@ -1,20 +1,28 @@
 {
-  "name": "slotsavvy-monorepo",
-  "version": "1.0.0",
+  "name": "web",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "apps/*"
-  ],
   "scripts": {
-    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\" \"npm run dev:ml\"",
-    "dev:web": "npm run dev --workspace=apps/web",
-    "dev:api": "npm run dev --workspace=apps/api",
-    "dev:ml": "cd apps/ml && uvicorn app:app --reload --port 8000",
-    "build": "npm run build --workspaces",
-    "test": "npm run test --workspaces",
-    "seed": "npm run seed --workspace=apps/api"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@react-google-maps/api": "^2.20.7",
+    "next": "16.0.7",
+    "next-auth": "^4.24.13",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
   },
   "devDependencies": {
-    "concurrently": "^8.2.0"
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.7",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

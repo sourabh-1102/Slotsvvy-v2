@@ -1,0 +1,83 @@
+
+> web@0.1.0 lint
+> eslint
+
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\app\api\auth\login\route.ts
+   6:20  warning  'password' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  19:12  warning  'error' is defined but never used              @typescript-eslint/no-unused-vars
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\app\api\parcels\route.ts
+  24:12  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\app\api\routes\compute\route.ts
+  8:9  warning  'pincode' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\app\page.tsx
+   4:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   9:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  14:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\app\receiver\page.tsx
+  23:40  error    Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  25:10  warning  'isRescheduling' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\app\sender\page.tsx
+  24:17  warning  'setSlots' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  24:38  error    Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
+  26:10  warning  'loading' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  45:21  error    Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\components\staff\Deliveries.tsx
+   2:24  warning  'STATUSES' is defined but never used                        @typescript-eslint/no-unused-vars
+  23:10  warning  'selectedDriverForBulk' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  63:36  error    Unexpected any. Specify a different type                    @typescript-eslint/no-explicit-any
+  67:42  error    Unexpected any. Specify a different type                    @typescript-eslint/no-explicit-any
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\components\staff\DeliveriesComponents.tsx
+  255:72   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  255:110  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\components\staff\Drivers.tsx
+  125:78  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                             react/no-unescaped-entities
+  180:37  error  React Hook "useState" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\components\staff\Overview.tsx
+  51:165  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  55:25   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\components\staff\Reports.tsx
+    3:35   warning  'MOCK_PARCELS' is defined but never used                         @typescript-eslint/no-unused-vars
+   59:11   warning  'avgDriverRating' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  213:126  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  213:158  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  213:161  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  213:190  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  219:85   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  219:98   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\components\staff\RouteMap.tsx
+  17:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\components\staff\RoutePlanner.tsx
+  35:14  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  39:40  warning  'parcels' is defined but never used       @typescript-eslint/no-unused-vars
+  41:40  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\components\staff\Sidebar.tsx
+   9:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  10:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  11:16  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  12:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  13:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  14:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\lib\api.ts
+  36:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  42:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\cing\WD\PROJECTS\Slotsvvy4.o\src\lib\mockDb.ts
+  16:10  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 44 problems (32 errors, 12 warnings)
+
