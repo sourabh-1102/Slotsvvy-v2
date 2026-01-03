@@ -70,3 +70,32 @@ To run the end-to-end verification script:
 ## Documentation
 - **API Docs**: Swagger UI at `/api-docs` (if configured) or check `apps/api/src/routes`.
 - **ML Training**: See `apps/ml/train_slot_recommender.ipynb`.
+
+
+
+
+
+# Contributing to SlotSavvy version S.V.1
+
+Thank you for your interest in contributing to SlotSavvy!
+
+## How You Can Contribute
+- Bug reports
+- Feature suggestions
+- Code improvements
+- Documentation enhancements
+- UI/UX suggestions
+
+## Contribution Terms
+By submitting any contribution to this project, you agree that:
+- Your contribution is voluntary.
+- SlotSavvy and its owner, Sourabh, may use, modify, and integrate your contribution.
+- You do not retain ownership or licensing rights over the final integrated work.
+- No compensation or royalties are owed for accepted contributions.
+
+## Restrictions
+- Contributions must not include copyrighted or proprietary material owned by third parties.
+- Commercial use or redistribution of SlotSavvy is not permitted.
+
+Thank you for helping improve SlotSavvy!
+
